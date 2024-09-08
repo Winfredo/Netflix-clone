@@ -1,13 +1,17 @@
+import Banner from "@/components/Banner";
+import Nav from "@/components/Nav";
 import Row from "@/components/Row";
 import Requests from "@/Requests";
 
 function Home() {
   return (
     <main>
-      <div className="flex flex-col items-center">
-        <p className="mb-[20px]">NETFLIX CLONE</p>
+      <Nav  />
+      <Banner />
+      <div className="flex flex-col items-center text-white ">
+        {/* <p className="mb-[20px]">NETFLIX CLONE</p> */}
         <Row
-          title="Netflix Originals"
+          title="NETFLIX ORIGINALS" 
           fetchUrl={Requests.fetchNetflixOriginals}
           isLargeRow
         />
