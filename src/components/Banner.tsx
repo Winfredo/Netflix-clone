@@ -55,7 +55,7 @@ const Banner = () => {
         </div>
 
         <div>
-          <h1 className="banner">
+          <h1 className="mt-2">
             {truncate(movie?.overview, 150)}
           </h1>
         </div>

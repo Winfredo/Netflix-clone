@@ -1,0 +1,2 @@
+
+declare module 'movie-trailer';

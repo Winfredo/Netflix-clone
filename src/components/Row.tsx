@@ -7,8 +7,6 @@ interface RowProps {
   title: string;
   fetchUrl: string;
   isLargeRow?: boolean;
-  trailerUrl?: string;
-  opts?: any;
 }
 
 const Row: React.FC<RowProps> = ({ title, fetchUrl, isLargeRow }) => {
@@ -36,14 +34,13 @@ const Row: React.FC<RowProps> = ({ title, fetchUrl, isLargeRow }) => {
   };
   const handleClick = (movie: any) => {
     if (trailerUrl) {
-      setTrailerUrl("  ");
+      setTrailerUrl("");
     } else {
-      movieTrailer(movie?.name || "")
-        .then((url: any) => {
+      movieTrailer(movie?.title || movie?.name || "")
+        .then((url: string) => {
           const urlParams = new URLSearchParams(new URL(url).search);
-          setUrlTrailer(urlParams.get("v"));
+          setTrailerUrl(urlParams.get("v"));
         })
-
         .catch((error: any) => console.log(error));
     }
   };
